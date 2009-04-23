@@ -27,7 +27,19 @@
                     <PropertyType Type="Enumeration" ListOfValuesName="FlexKeyModifierValues" Codec="keyModifier"/>
                </Property>
             </Event>
-        </Events>
+            <Event Name="MouseDown" >
+                <Implementation Class="flash.events::MouseEvent" Type="mouseDown"/>
+               <Property Name="localX"  DefaultValue="0">
+                <PropertyType Type="int"/>
+               </Property>
+               <Property Name="localY"  DefaultValue="0">
+                <PropertyType Type="int"/>
+               </Property>
+               <Property Name="keyModifier"  DefaultValue="0">
+                    <PropertyType Type="Enumeration" ListOfValuesName="FlexKeyModifierValues" Codec="keyModifier"/>
+               </Property>
+            </Event>
+         </Events>
         <Properties>
             <Property Name="tabChildren" ForVerification="true"><PropertyType Type="Boolean"/></Property>
             <Property Name="tabEnabled" ForVerification="true"><PropertyType Type="Boolean"/></Property>
