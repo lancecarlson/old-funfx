@@ -79,9 +79,12 @@ package funfx {
               var o:Object = Object(target);
               if (o.hasOwnProperty(fieldName))
                   return o[fieldName];
-              else if(fieldName == "null")
+              else if(fieldName == "null") {
+                if (target == null) 
                   return "true";
-              else {
+              
+                return "false";
+              } else {
                   Logger.addError("Field not found", new LogElement("Property", fieldName), new LogElement("Target", Logger.createComponentText(target as DisplayObject)), new LogElement("Locator", Logger.convertLocator(locator)));
                   throw new Error("Field not found: " + target + " doesn't have a field named '" + fieldName + "'");
               }
